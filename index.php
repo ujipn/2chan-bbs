@@ -16,7 +16,12 @@ include_once("./app/database/connect.php"); //データべ＾スと接続開始
 </head>
 
 <body>
-<header class="header">
+    <header class="header">
+        <p>日程、エリア（おすすめ）、予算、目的、人数（キャパ）</p>
+        <p>自分で探す、専門家に頼む、AIに頼む、施設からの提案（ウチやったらこんなんできるでー）</p>
+        <p>宿泊施設、移動手段、行程、食事、コンテンツ</p>
+        <p>体験共有</p>
+        <p>企画呼びかけ、カレンダー、企業協賛、企業合同合宿、合宿あいのり、企画へのコメント</p>
         <div class="search-form">
             <input type="text" id="location" placeholder="場所">
             <input type="date" id="check-in-date" placeholder="チェックイン">
@@ -25,7 +30,7 @@ include_once("./app/database/connect.php"); //データべ＾スと接続開始
             <button id="search-button" type="submit">検索</button>
         </div>
     </header>
-<div id="myMap" style="width:60%;height:400px;margin:0 auto;"></div>
+    <div id="myMap" style="width:60%;height:400px;margin:0 auto;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         function GetMap() {
@@ -79,10 +84,8 @@ include_once("./app/database/connect.php"); //データべ＾スと接続開始
 
         window.onload = GetMap;
     </script>
-      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script
-        src='https://www.bing.com/api/maps/mapcontrol?key=AoHPWA9yjgEBfopraPJU8a_aGvHCDmt_T8X5swu1glCtisNV2dM-HZ5Go52J44rq&callback=GetMap'
-        async defer></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src='https://www.bing.com/api/maps/mapcontrol?key=AoHPWA9yjgEBfopraPJU8a_aGvHCDmt_T8X5swu1glCtisNV2dM-HZ5Go52J44rq&callback=GetMap' async defer></script>
     <script src="js/BmapQuery.js"></script>
 
     <?php include("app/parts/header.php"); ?>
