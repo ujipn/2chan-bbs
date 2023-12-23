@@ -4,8 +4,9 @@ body{
     line-height: 1.65;
     color: rgb(17, 17, 17);
     width: 100%;
-    background: rgb(243, 243, 243);
+    background: white;
 }
+
 
 .title{
     text-align: center;
@@ -108,7 +109,7 @@ section .comment{
 .search-form {
     display: inline-block;
     background-color: #f1f1f1;
-    padding: 10px;
+    padding: 1px;
     border-radius: 4px;
 }
 
