@@ -1,3 +1,4 @@
+<!-- コメントの入力フォーム -->
 <form class="formWrapper" method="POST">
     <div>
         <input type="submit" value="書き込む" name="submitButton">

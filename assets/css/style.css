@@ -1,19 +1,155 @@
-body{
-    font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", Osaka, sans-serif;
+
+
+/* 全体的なスタイリング */
+body {
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
-    line-height: 1.65;
-    color: rgb(17, 17, 17);
-    width: 100%;
+    line-height: 1.5;
+    color: #333333; /* 紺色のテキスト */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* 背景を白に変更 */
+}
+
+
+button{
+    border-radius: 8px;
+    border: none;
+    padding: 4px 16px;
+    margin: 0px 2px;
     background: white;
 }
 
 
-.title{
-    text-align: center;
-    font-size: 34px;
+button:hover{
+    background: #79a8a9;
+    color: #fff;
 }
 
-.threadWrapper{
+.container {
+    max-width: 500px;
+    margin: 2rem;
+  }
+
+  /* ヘッダー */
+  li {
+    list-style: none;
+  }
+  
+  .header {
+    text-align: center;
+    min-height: 65px;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .header-left {
+    float: left;
+    padding: 10px 60px;
+    color: #ED7000;
+    font-size: 30px;
+  }
+  
+  .header-right {
+    float: right;
+    color: #808080;
+  }
+  
+  .header-right li {
+    float: left;
+    padding: 20px 30px;
+    border-left: 1px solid #dddddd;
+  }
+  
+  .selected {
+    color: #ED7000;
+  }
+
+.title {
+    text-align: center;
+    font-size: 34px;
+    background: #c6e5d9;
+    width: 400px;
+    height: 50px;
+    padding: 4px;
+    margin: 8px auto;
+    border-radius: 8px;
+}
+
+/* テーブルコンテナー */
+.locations-table {
+    max-width: 800px; /* 適切な最大幅に調整 */
+    margin: 30px auto; /* 上下にマージンを設定し中央揃えに */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* シャドウを付ける */
+    border-radius: 8px; /* 角を丸くする */
+}
+
+/* テーブルスタイリング */
+.location-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.location-table th,
+.location-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eaeaea; /* 各行の下に線を引く */
+}
+
+.location-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: #333;
+}
+
+.location-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* リンクのスタイリング */
+.location-table td a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.location-table td a:hover {
+    text-decoration: underline;
+}
+
+/* 価格 */
+#price-slider {
+    width: 50%; /* スライダーの幅を画面の50%に設定 */
+    margin: 0 auto; /* 上下のマージンを0、左右のマージンをautoに設定して中央に配置 */
+}
+
+.noUi-tooltip {
+    background-color: #FFF; /* ツールチップの背景色を白に */
+    color: #000; /* ツールチップの文字色を黒に */
+    font-size: 14px; /* フォントサイズを調整 */
+    border: 1px solid #D9D9D9; /* ツールチップのボーダーを調整 */
+}
+
+.noUi-pips .noUi-value {
+    /* 目盛りの数値のスタイル調整 */
+    margin-top: 10px; /* 例: 上部のマージンを追加 */
+}
+
+#price-slider .noUi-pips .noUi-value {
+    transform: translateX(-50%); /* 目盛りのテキストを中央に配置 */
+}
+#price-slider .noUi-handle {
+    outline: none; /* フォーカス時のアウトラインを除去 */
+    cursor: grab; /* マウスカーソルをグラブに設定 */
+}
+#price-slider .noUi-handle:active {
+    cursor: grabbing; /* アクティブなハンドルのマウスカーソルをグラビングに設定 */
+}
+
+/* 掲示板 */
+
+.threadWrapper {
     background-color: white;
     padding: 10px;
     max-width: 1300px;
@@ -22,12 +158,12 @@ body{
     margin-bottom: 20px;
 }
 
-.childWrapper{
+.childWrapper {
     border: 1px solid black;
     padding: 10px;
 }
 
-.threadTitle{
+.threadTitle {
     display: flex;
     align-items: center;
     font-weight: 600;
@@ -35,63 +171,64 @@ body{
     height: 60px;
 }
 
-.threadTitle h1{
+.threadTitle h1 {
     color: #ff577f;
     margin-left: 3px;
-    font-size:27px;
+    font-size: 27px;
 }
 
-section{
-padding: 0 10px;
+section {
+    padding: 0 10px;
 
 }
 
-section .nameArea{
+section .nameArea {
     display: flex;
     align-items: center;
     margin-bottom: -14px;
 }
 
-section .username{
-    color:  #ff577f;
+section .username {
+    color: #ff577f;
     font-weight: 700;
 }
 
-section .comment{
+section .comment {
     margin-top: 0;
     margin-left: 20px;
 }
 
-.formWrapper{
+.formWrapper {
     padding: 16px;
     margin-left: 20px;
 }
 
-.commenttextarea{
+.commenttextarea {
     margin-top: 10px;
     width: 500px;
     height: 90px;
-    resize:none;
+    resize: none;
 }
 
-.errorMessage{
+.errorMessage {
     color: red;
     margin-left: 50px;
 }
 
 
 /* 新規スレッド */
-.newThreadWrapper{
-    background-color: #b3eeb3;
+.newThreadWrapper {
+    background-color: #c6e5d9;
     padding: 10px;
     max-width: 1300px;
     margin: 0 auto;
     border: 1px solid black;
     margin-bottom: 20px;
+    border-radius: 8px;
 
 }
 
-.newChildThreadWrapper{
+.newChildThreadWrapper {
     text-align: center;
     padding: 10px;
     border: 1px solid black;
@@ -99,7 +236,7 @@ section .comment{
 }
 
 
-.newChildThreadWrapper button a{
+.newChildThreadWrapper button a {
     width: 150px;
     color: black;
     text-decoration: none;
@@ -108,34 +245,18 @@ section .comment{
 
 .search-form {
     display: inline-block;
-    background-color: #f1f1f1;
-    padding: 1px;
-    border-radius: 4px;
+    background: #c6e5d9;
+    padding: 4px;
+    margin: 8px auto;
+    border-radius: 8px;
 }
 
 .search-form input[type="text"],
 .search-form input[type="date"],
 .search-form input[type="number"] {
-    padding: 10px;
-    margin: 0 10px;
+    border-radius: 8px;
     border: none;
-    border-radius: 4px;
+    padding: 4px 16px;
+    margin: 0px 2px;
 }
 
-.search-form button {
-    background-color: #ff385c;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-
-.search-form button:hover {
-    background-color: #ff577f;
-}
-
-.header {
-    text-align: center;
-}

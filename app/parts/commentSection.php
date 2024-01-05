@@ -1,3 +1,4 @@
+<!-- 掲示板コメント本文 -->
 <?php 
 include("app/functions/comment_get.php");
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 $user = "root";
-$pass = "hiro0121";
+$pass = "";
 
 //DBと接続
 //pdoは設計図みたいなもの。詳しくは公式ドキュ
