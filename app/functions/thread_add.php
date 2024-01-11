@@ -51,5 +51,5 @@ if (isset($_POST["threadSubmitButton"])) { //ボタンを推すと、まずデ�
         $statement->execute();
     }
     //掲示板に遷移する
-    header("Location:http://localhost/2chan-bbs");
+    header("Location:http://localhost/kadai_test");
 }

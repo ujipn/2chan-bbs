@@ -1,6 +1,6 @@
 <?php //phpの読み込み開始
 
-include_once("../database/connect.php"); //データべ＾スと接続開始
+include_once("../database/funcs.php"); //データべ＾スと接続開始
 include_once("../../app/functions/thread_add.php"); //データべ＾スと接続開始
 
 

@@ -17,7 +17,8 @@ button{
     border: none;
     padding: 4px 16px;
     margin: 0px 2px;
-    background: white;
+    color: white;
+    background: rgb(80, 86, 198);
 }
 
 
@@ -45,7 +46,7 @@ button:hover{
   .header-left {
     float: left;
     padding: 10px 60px;
-    color: #ED7000;
+    color: rgb(80, 86, 198);
     font-size: 30px;
   }
   
@@ -61,18 +62,17 @@ button:hover{
   }
   
   .selected {
-    color: #ED7000;
+    color: rgb(80, 86, 198);
   }
 
 .title {
     text-align: center;
     font-size: 34px;
-    background: #c6e5d9;
     width: 400px;
     height: 50px;
     padding: 4px;
     margin: 8px auto;
-    border-radius: 8px;
+   
 }
 
 /* テーブルコンテナー */
@@ -172,7 +172,7 @@ button:hover{
 }
 
 .threadTitle h1 {
-    color: #ff577f;
+    color: rgb(80, 86, 198);
     margin-left: 3px;
     font-size: 27px;
 }
@@ -189,7 +189,7 @@ section .nameArea {
 }
 
 section .username {
-    color: #ff577f;
+    color: rgb(80, 86, 198);
     font-weight: 700;
 }
 
@@ -218,21 +218,18 @@ section .comment {
 
 /* 新規スレッド */
 .newThreadWrapper {
-    background-color: #c6e5d9;
     padding: 10px;
     max-width: 1300px;
     margin: 0 auto;
-    border: 1px solid black;
     margin-bottom: 20px;
     border-radius: 8px;
+    
 
 }
 
 .newChildThreadWrapper {
     text-align: center;
     padding: 10px;
-    border: 1px solid black;
-
 }
 
 
@@ -240,12 +237,12 @@ section .comment {
     width: 150px;
     color: black;
     text-decoration: none;
+    color: whitesmoke;
 
 }
 
 .search-form {
     display: inline-block;
-    background: #c6e5d9;
     padding: 4px;
     margin: 8px auto;
     border-radius: 8px;

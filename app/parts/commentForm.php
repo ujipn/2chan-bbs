@@ -1,5 +1,5 @@
 <!-- コメントの入力フォーム -->
-<form class="formWrapper" method="POST">
+<form class="formWrapper" method="POST" >
     <div>
         <input type="submit" value="書き込む" name="submitButton">
         <label>名前：</label>
@@ -9,12 +9,18 @@
     <div>
         <textarea class="commenttextarea" name="body"></textarea>
     </div>
-    <!-- 位置取得用 -->
-    <input type="hidden" name="position" value="0">
+       <!-- 位置取得用 -->
+       <input type="hidden" name="position" value="0">
+    <!-- <div>
+        <label for="image">画像：</label>
+        <input type="file" id="image" name="image">
+
+        <div>
+          -->
 </form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    // console.log($(window).scrollTop());
+    
     $(document).ready(() => {
         $("input[type=submit]").click(() => {
 

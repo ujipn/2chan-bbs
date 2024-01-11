@@ -1,7 +1,5 @@
 <?php //phpの読み込み開始
-
-include_once("./app/database/connect.php"); //データべ＾スと接続開始
-
+require_once('app/database/funcs.php');
 ?>
 
 
@@ -35,9 +33,14 @@ include_once("./app/database/connect.php"); //データべ＾スと接続開始
             <ul>
                 <li>煩わしい合宿の下準備</li>
                 <li>合宿のコンテンツのクオリティアップ</li>
+                <div class="choice">
+                    <button>企業合宿</button>
+                    <button>個人合宿</button>
+                    <button>家族合宿</button>
             </ul>
             <p>企画呼びかけ、カレンダー、企業協賛、企業合同合宿、合宿あいのり、企画へのコメント</p>
             <hr>
+
 
             <h1 class="title">合宿を計画する</h1>
             <div class="choice">
@@ -71,43 +74,44 @@ include_once("./app/database/connect.php"); //データべ＾スと接続開始
                 const lowerValue = document.getElementById('price-lower');
                 const upperValue = document.getElementById('price-upper');
                 document.addEventListener('DOMContentLoaded', function() {
-    noUiSlider.create(slider, {
-        start: [0, 100000], // スライダーの開始位置を最小値と最大値に設定
-        connect: true,
-        range: {
-            'min': 0,
-            'max': 100000
-        },
-        tooltips: wNumb({
-            decimals: 0 // 小数点以下を表示しない
-        }),
-        pips: {
-            mode: 'values',
-            values: [0, 25000, 50000, 75000, 100000],
-            density: 4,
-            format: wNumb({ // ピップスのフォーマットを整数に設定
-                decimals: 0,
-                thousand: ',',
-                suffix: '円'
-            })
-        }
-    });
-  
-    slider.noUiSlider.on('update', function(values, handle) {
-        let value = values[handle];
-        // ツールチップの値から小数点以下を削除する
-        value = wNumb({ decimals: 0 }).to(Number(value));
-        if (handle) {
-            upperValue.innerHTML = value;
-        } else {
-            lowerValue.innerHTML = value;
-        }
-    });
+                    noUiSlider.create(slider, {
+                        start: [0, 100000], // スライダーの開始位置を最小値と最大値に設定
+                        connect: true,
+                        range: {
+                            'min': 0,
+                            'max': 100000
+                        },
+                        tooltips: wNumb({
+                            decimals: 0 // 小数点以下を表示しない
+                        }),
+                        pips: {
+                            mode: 'values',
+                            values: [0, 25000, 50000, 75000, 100000],
+                            density: 4,
+                            format: wNumb({ // ピップスのフォーマットを整数に設定
+                                decimals: 0,
+                                thousand: ',',
+                                suffix: '円'
+                            })
+                        }
+                    });
 
-    // ページ読み込み時にスライダーの値を設定
-    slider.noUiSlider.set([10000, 100000]);
-});
-              
+                    slider.noUiSlider.on('update', function(values, handle) {
+                        let value = values[handle];
+                        // ツールチップの値から小数点以下を削除する
+                        value = wNumb({
+                            decimals: 0
+                        }).to(Number(value));
+                        if (handle) {
+                            upperValue.innerHTML = value;
+                        } else {
+                            lowerValue.innerHTML = value;
+                        }
+                    });
+
+                    // ページ読み込み時にスライダーの値を設定
+                    slider.noUiSlider.set([10000, 100000]);
+                });
             </script>
             <h1 class="title">場所を決めましょう</h1>
             <div class="search-form">
@@ -141,7 +145,7 @@ include_once("./app/database/connect.php"); //データべ＾スと接続開始
 
 
             function loadRetreatLocations(area) {
-                var url = 'http://localhost/2chan-bbs/get_locations.php';
+                var url = 'http://localhost/kadai_test/get_locations.php';
                 if (area) {
                     url += '?area=' + encodeURIComponent(area);
                 }
@@ -285,7 +289,7 @@ include_once("./app/database/connect.php"); //データべ＾スと接続開始
                 // 各ロケーションのデータで行を作成
                 locations.forEach(function(location) {
                     var row = $('<tr></tr>');
-                    row.append('<td>' + location.name + '</td>');
+                    row.append('<td><a href="detail.php?id=' + location.id + '">' + location.name + '</a></td>');
                     row.append('<td>' + location.address + '</td>');
                     row.append('<td>' + location.capacity + '</td>');
                     row.append('<td>' + location.conference + '</td>');
@@ -335,9 +339,32 @@ include_once("./app/database/connect.php"); //データべ＾スと接続開始
         </article>
         <!-- ここまで -->
 
-        <?php include("app/parts/header.php"); ?>
+        <!-- BBS開始 -->
+        <header>
+            <hr>
+            <h1 class="title">新着合宿キロク</h1>
+            <p>合宿に行った記録や口コミを残してみよう</p>
+        </header>
         <?php include("app/parts/validation.php"); ?>
-        <?php include("app/parts/thread.php"); ?>
+        <?php //phpの読み込み開始
+        include_once("./app/database/funcs.php"); //データべースと接続開始
+        include("app/functions/comment_add.php");
+        include("app/functions/thread_get.php");
+        ?>
+
+        <?php foreach ($thread_array as $thread) : ?>
+            <div class="threadWrapper">
+                <div class="childWrapper">
+                    <div class="threadTitle">
+                        <span>【タイトル】</span>
+                        <h1><?php echo $thread["title"] ?></h1>
+                    </div>
+                    <?php include("app/parts/commentSection.php"); ?>
+                    <?php include("app/parts/commentForm.php"); ?>
+                </div>
+            </div>
+        <?php endforeach ?>
+
         <?php include("app/parts/newThreadButton.php"); ?>
         <?php include("app/parts/event.php"); ?>
 

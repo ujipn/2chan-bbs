@@ -9,5 +9,3 @@ $statement = $pdo->prepare($sql);
 $statement->execute();
 
 $comment_array = $statement;
-
-// var_dump($comment_array->fetchAll());

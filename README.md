@@ -23,3 +23,5 @@
 ## 参考にした web サイトなど
 
   - udemy　「PHP入門2ちゃんねる掲示板えお作りながら基礎をマスターする入門パック」
+  - https://296.co.jp/article/22541020191005857
+  - https://www.php.net/manual/ja/functions.returning-values.php
