@@ -119,6 +119,7 @@ require_once('app/database/funcs.php');
                     <option value="">地域を選択してください</option>
                     <option value="nara">奈良</option>
                     <option value="tokyo">東京</option>
+                    <option value="chiba">千葉</option>
                     <!-- 必要に応じて他の地域を追加 -->
                 </select>
                 <button id="search-button" type="submit">検索</button>
@@ -240,16 +241,21 @@ require_once('app/database/funcs.php');
             function updateMapCenter(area) {
 
                 // 選択された地域に応じてマップを移動させる
-                var locations = {
+                const locations = {
                     'nara': {
                         lat: 34.685087,
                         lon: 135.805000,
-                        zoom: 10
+                        zoom: 8
                     },
                     'tokyo': {
                         lat: 35.689487,
                         lon: 139.691706,
-                        zoom: 10
+                        zoom: 8
+                    },
+                    'chiba': {
+                        lat: 35.60586437252906,
+                        lon:  140.1234138306851,
+                        zoom: 8
                     },
                     // 他の地域についても同様に追加
                 };

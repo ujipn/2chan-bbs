@@ -150,17 +150,21 @@ button:hover{
 /* 掲示板 */
 
 .threadWrapper {
-    background-color: white;
-    padding: 10px;
     max-width: 1300px;
     margin: 0 auto;
-    border: 1px solid black;
     margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* シャドウを付ける */
+    border-radius: 8px; /* 角を丸くする */
 }
 
+
 .childWrapper {
-    border: 1px solid black;
+    border: 1px solid  #333;;
     padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* シャドウを付ける */
+    border-radius: 8px; /* 角を丸くする */
 }
 
 .threadTitle {
