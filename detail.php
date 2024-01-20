@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('app/database/areaconnect.php');
+require_once('app/database/funcs.php');
 loginCheck();
 
 $id = $_GET['id']; //?id~**を受け取る

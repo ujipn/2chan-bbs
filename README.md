@@ -7,6 +7,7 @@
 ## 紹介と使い方
 
   - 合宿企画者向けのサイト作成中です。
+  - 現時点ではログイン機能、map検索機能、コメント・スレッド追加、削除機能まで実装
 
 ## 工夫した点
 
@@ -28,4 +29,5 @@
 
   - udemy 「PHP入門2ちゃんねる掲示板えお作りながら基礎をマスターする入門パック」
   - https://296.co.jp/article/22541020191005857
-  - https://www.php.net/manual/ja/functions.returning-values.php
+  - https://www.php.net/manual/ja/functions.returning-values.ph
+  - https://qiita.com/dnote/items/5f22f43a9b4158caff97 大ちゃんの記事で.envまで完了できました！

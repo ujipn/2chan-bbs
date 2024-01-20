@@ -1,6 +1,6 @@
 <?php
 
-include("app/database/areaconnect.php"); // データベース接続スクリプトをインクルード
+include("app/database/funcs.php"); // データベース接続スクリプトをインクルード
 
 header('Content-Type: application/json'); // 出力をJSON形式に設定
 

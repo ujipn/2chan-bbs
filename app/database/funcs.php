@@ -1,17 +1,23 @@
 <?php
+//必要なパッケージを自動で読み込むための記述
+require __DIR__ . '/../../vendor/autoload.php';
+//phpdotenvの機能を使って__DIR__=ファイルの存在する階層にある.envを指定する
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+//.env中の設定値をロードし、$_ENVとして使用できるようにする
+$dotenv->load();
 
-    try {
-        $db_name = 'bbs_test';    //データベース名
-        $db_id   = 'root';      //アカウント名
-        $db_pw   = '';      //パスワード：XAMPPはパスワード無しに修正してください。
-        $db_host = 'localhost'; //DBホスト
-        $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
-        // return $pdo;
-    } catch (PDOException $e) {
-        exit('DB Connection Error:' . $e->getMessage());
-    }
+try {
+    $db_name = $_ENV['DB_NAME']; //データベース名
+    $db_id   = $_ENV['DB_ID']; //アカウント名
+    $db_pw   = $_ENV['DB_PASS']; //パスワード：MAMPは'root'
+    $db_host = $_ENV['DB_HOST']; //DBホスト
+    $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
+    // return $pdo;
+} catch (PDOException $e) {
+    exit('DB Connection Error:' . $e->getMessage());
+}
 
-    //SQLエラー
+//SQLエラー
 function sql_error($stmt)
 {
     //execute（SQL実行時にエラーがある場合）
