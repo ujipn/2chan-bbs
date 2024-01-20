@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-01-12 00:23:53
+-- 生成日時: 2024-01-18 16:41:11
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -46,6 +46,30 @@ INSERT INTO `comment` (`id`, `username`, `body`, `post_date`, `thread_id`) VALUE
 -- --------------------------------------------------------
 
 --
+-- テーブルの構造 `gs_user_table`
+--
+
+CREATE TABLE `gs_user_table` (
+  `id` int(12) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `lid` varchar(128) NOT NULL,
+  `lpw` varchar(64) NOT NULL,
+  `kanri_flg` int(1) NOT NULL,
+  `life_flg` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `gs_user_table`
+--
+
+INSERT INTO `gs_user_table` (`id`, `name`, `lid`, `lpw`, `kanri_flg`, `life_flg`) VALUES
+(1, 'テスト１管理者', 'test1', 'test1', 1, 0),
+(2, 'テスト2一般', 'test2', 'test2', 0, 0),
+(3, 'テスト３', 'test3', 'test3', 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- テーブルの構造 `thread`
 --
 
@@ -74,6 +98,12 @@ ALTER TABLE `comment`
   ADD KEY `thread_id` (`thread_id`);
 
 --
+-- テーブルのインデックス `gs_user_table`
+--
+ALTER TABLE `gs_user_table`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- テーブルのインデックス `thread`
 --
 ALTER TABLE `thread`
@@ -87,7 +117,13 @@ ALTER TABLE `thread`
 -- テーブルの AUTO_INCREMENT `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- テーブルの AUTO_INCREMENT `gs_user_table`
+--
+ALTER TABLE `gs_user_table`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- テーブルの AUTO_INCREMENT `thread`

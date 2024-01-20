@@ -22,7 +22,9 @@ require_once('app/database/funcs.php');
             <div class="header-left">Spot-Retreat</div>
             <div class="header-right">
                 <ul>
-                    <li>候補検索</li>
+                    <li>
+                        <a href="app/functions/login.php">ログイン</a>
+                    </li>
                     <li>新着情報</li>
                     <li class="selected">お問い合わせ</li>
                 </ul>
@@ -39,7 +41,9 @@ require_once('app/database/funcs.php');
                     <button>家族合宿</button>
             </ul>
             <p>企画呼びかけ、カレンダー、企業協賛、企業合同合宿、合宿あいのり、企画へのコメント</p>
+            <p>地域住民おせっかい機能、良い情報への投げ銭機能</p>
             <hr>
+
 
 
             <h1 class="title">合宿を計画する</h1>
@@ -254,7 +258,7 @@ require_once('app/database/funcs.php');
                     },
                     'chiba': {
                         lat: 35.60586437252906,
-                        lon:  140.1234138306851,
+                        lon: 140.1234138306851,
                         zoom: 8
                     },
                     // 他の地域についても同様に追加

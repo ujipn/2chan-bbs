@@ -12,20 +12,19 @@ include_once("../../app/functions/thread_add.php"); //データべ＾スと接�
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新規スレッド作成ページ</title>
+    <title>新たな合宿施設情報アップ</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
 <body>
-    <?php include("../../app/parts/header.php"); ?>
     <?php include("../parts/validation.php"); ?>
 
     <div style="padding-left:36px; color: blue;">
-        <h2 style="margin-top:20px; margin-bottom:0;">新規スレッド立ち上げ場</h2>
+        <h2 style="margin-top:20px; margin-bottom:0;">新たな合宿施設情報アップ</h2>
     </div>
-    <form method="POST">スレッド名
+    <form method="POST">施設名
         <input type="text" name="title">
-        <label>名前</label>
+        <label>あなたの名前</label>
         <input type="text" name=username>
 
         <div>
